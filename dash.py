@@ -66,3 +66,26 @@ with c1:
     st.metric('Atual', value='126.000')
 with c2:
     st.metric('Meta', value='150.000', delta='-24.000')
+
+st.divider()
+st.header('Boletos')
+c1, c2 = st.columns(2)
+with c1:
+    labels = ['Boleto', 'Outros']
+    values = [60,40]
+
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
+    st.plotly_chart(fig)
+
+c1, c2 = st.columns(2)
+with c1:
+    st.metric('Total a receber', value='500.000,00')
+with c2:
+    st.metric('Média Recebimentos', value='20.000,00')
+
+st.subheader('Parazo médio (meses)')
+c1, c2 = st.columns(2)
+with c1:
+    st.metric('Atual', value='25')
+with c2:
+    st.metric('Meta', value='8', delta='-17')
