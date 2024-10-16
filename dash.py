@@ -23,49 +23,19 @@ with cl1:
 
 
 st.header('Financeiro')
-st.subheader('Faturamento')
+#st.subheader('Faturamento')
 
-c1, c2 = st.columns(2)
+c1, c2, c3 = st.columns(3)
 
 with c1:
-    st.metric('Atual', value='63.000')
+    st.metric('Faturamento', value='63.000', delta="-87.000")
+    st.metric('Conversão Valor', value='25%', delta='-10%')
 with c2:
-    st.metric('Meta', value='150.000', delta="-87.000")
-
-st.subheader('Venda/Dia')
-c1, c2 = st.columns(2)
-with c1:
-    st.metric('Atual', value='5.250')
-with c2:
-    st.metric('Meta', value='7.250', delta='-2.000')
-
-st.subheader('Ticket médio')
-c1, c2 = st.columns(2)
-with c1:
-    st.metric('Atual', value='650')
-with c2:
-    st.metric('Meta', value='500', delta='100')
-
-st.subheader('Conversão Valor')
-c1, c2 = st.columns(2)
-with c1:
-    st.metric('Atual', value='25%')
-with c2:
-    st.metric('Meta', value='30%', delta='-10%')
-
-st.subheader('Conversão Qauntidade')
-c1, c2 = st.columns(2)
-with c1:
-    st.metric('Atual', value='70%')
-with c2:
-    st.metric('Meta', value='50%', delta='20%')
-
-st.subheader('Projeção de venda')
-c1, c2 = st.columns(2)
-with c1:
-    st.metric('Atual', value='126.000')
-with c2:
-    st.metric('Meta', value='150.000', delta='-24.000')
+    st.metric('Vendas/Dia', value='5.250', delta='-2.000')
+    st.metric('Conversão Quantidade', value='70%', delta='20%')
+with c3:
+    st.metric('Ticket Médio', value='650', delta='100')
+    st.metric('Projeção de venda', value='126.000', delta='-24.000')
 
 st.divider()
 st.header('Boletos')
@@ -77,15 +47,14 @@ with c1:
     fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
     st.plotly_chart(fig)
 
-c1, c2 = st.columns(2)
+c1, c2, c3 = st.columns(3)
 with c1:
     st.metric('Total a receber', value='500.000,00')
 with c2:
     st.metric('Média Recebimentos', value='20.000,00')
+with c3:
+    st.metric('Prazo médio (meses)', value='25', delta='-17')
 
-st.subheader('Parazo médio (meses)')
-c1, c2 = st.columns(2)
-with c1:
-    st.metric('Atual', value='25')
-with c2:
-    st.metric('Meta', value='8', delta='-17')
+st.divider()
+
+st.header('Marketing')
