@@ -5,13 +5,12 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title='Indicadores OC')
 
-st.write('Unidade: São Francisco')
+st.subheader('Unidade: São Francisco')
 
-st.header('Visão Geral')
 fig = go.Figure(go.Indicator(
     mode='gauge+number',
     value=95,
-    title={'text':'Score'},
+    title={'text':'Score OC'},
     domain={'x': [0,1], 'y': [0,1]},
     gauge={
         'axis':{'range':[0,100]}
@@ -23,7 +22,6 @@ with cl1:
 
 
 st.header('Financeiro')
-#st.subheader('Faturamento')
 
 c1, c2, c3 = st.columns(3)
 
