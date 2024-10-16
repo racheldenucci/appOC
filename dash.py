@@ -58,3 +58,15 @@ with c3:
 st.divider()
 
 st.header('Marketing')
+c1, c2, c3, c4 = st.columns(4)
+
+with c1:
+    st.metric('Leads', value=20, delta=-15)
+
+with c2:
+    st.metric('Agendamento', value=17, delta=-3)
+
+with c3:
+    st.metric('Comparecimento', value=9, delta=-1)
+with c4:
+    st.metric('Fechamento', value=4, delta=-1)
