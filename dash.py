@@ -12,9 +12,12 @@ fig = go.Figure(go.Indicator(
     mode='gauge+number',
     value=95,
     title={'text':'Score'},
-    domain={'x': [0,1], 'y': [0,1]}
+    domain={'x': [0,1], 'y': [0,1]},
+    gauge={
+        'axis':{'range':[0,100]}
+    }
 ))
-cl1, cl2 = st.columns(2)
+cl1, cl2, cl3 = st.columns(3)
 with cl1:
     st.plotly_chart(fig)
 
